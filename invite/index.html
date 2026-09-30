@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse Invitation</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { color-scheme: light dark; --accent: #7c5cff; }
+  body { font: 17px/1.5 -apple-system, system-ui, sans-serif; margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f5f5f7; color: #1d1d1f; }
+  @media (prefers-color-scheme: dark) { body { background: #000; color: #f5f5f7; } }
+  main { max-width: 420px; padding: 24px 16px; text-align: center; }
+  .mark { width: 88px; height: 88px; border-radius: 50%; margin: 0 auto 20px; display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 16%, transparent); font-size: 40px; }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  p { opacity: .7; margin: 0 0 12px; }
+  a.button { display: block; margin: 28px 0 14px; padding: 15px; border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
+  .small { font-size: 14px; }
+  .error { color: #d4521f; opacity: 1; }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark">🏠</div>
+  <h1>You're invited to a home on Pulse</h1>
+  <p id="lead">Open it in Pulse and sign in with your Pulse account. There's no password to remember.</p>
+  <a class="button" id="open" href="#">Open in Pulse</a>
+  <p class="small">Don't have Pulse yet? Install it, then come back to this page and tap Open in Pulse.</p>
+</main>
+<script>
+  // The invitation code is the only thing this page handles. It goes
+  // straight to the app; nothing is sent anywhere from here.
+  var code = (new URLSearchParams(location.search).get("c") || "").replace(/[^A-Za-z0-9_-]/g, "");
+  var open = document.getElementById("open");
+  if (code) {
+    open.href = "pulseha://invite/" + code;
+    // Try the app once on arrival -- a QR scan lands here first.
+    setTimeout(function () { location.href = open.href; }, 300);
+  } else {
+    open.style.display = "none";
+    var lead = document.getElementById("lead");
+    lead.textContent = "This link is missing its invitation. Ask for it again.";
+    lead.className = "error";
+  }
+</script>
+</body>
+</html>
