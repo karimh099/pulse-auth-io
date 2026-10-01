@@ -47,7 +47,10 @@
 <script>
   // The invitation code is the only thing this page handles. It goes
   // straight to the app; nothing is sent anywhere from here.
-  var code = (new URLSearchParams(location.search).get("c") || "").replace(/[^A-Za-z0-9_-]/g, "");
+  // The code alone: the leading run of code characters. Shared with a
+  // message, some apps stick the message on after a space -- stripping the
+  // spaces glued the words onto the code ("…JoinHomeKFonPulse").
+  var code = ((new URLSearchParams(location.search).get("c") || "").match(/^[A-Za-z0-9_-]+/) || [""])[0];
   var open = document.getElementById("open");
   if (code) {
     open.href = "pulseha://invite/" + code;
