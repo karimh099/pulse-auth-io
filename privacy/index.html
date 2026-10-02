@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; --accent: #7f35ff; }
+  body { font: 17px/1.6 -apple-system, system-ui, sans-serif; margin: 0; background: #f5f5f7; color: #1d1d1f; }
+  @media (prefers-color-scheme: dark) { body { background: #000; color: #f5f5f7; } a { color: #a978fe; } }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; box-sizing: border-box; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; margin-bottom: 28px; }
+  .brand span { width: 28px; height: 28px; border-radius: 7px; background: linear-gradient(135deg, #4e00d4, #7f35ff); display: inline-block; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 6px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; }
+  .meta { opacity: .6; font-size: 15px; margin-bottom: 24px; }
+  ul { padding-left: 22px; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  .note { font-size: 15px; opacity: .75; border-left: 3px solid var(--accent); padding-left: 12px; }
+  footer { margin-top: 48px; font-size: 14px; opacity: .6; }
+</style>
+</head>
+<body>
+<main>
+<div class="brand"><span></span>Pulse</div>
+<h1>Privacy Policy</h1>
+<div class="meta">Effective 2 October 2026</div>
+
+<p>Pulse is an app for controlling your own smart home. It connects to <strong>your</strong> Home Assistant server, and your home's devices, history and settings live there, not with us. This policy explains the small amount of information Pulse's own service keeps, why, and what you can do about it.</p>
+<p>Pulse is provided by Karim Hallab ("we"). Questions: <a href="mailto:info@pulse-io.com">info@pulse-io.com</a>.</p>
+
+<h2>What we keep</h2>
+<ul>
+  <li><strong>Your Pulse account.</strong> Your email address and name, held by our sign-in provider, Clerk. We never see your password.</li>
+  <li><strong>The homes you connect.</strong> Each home's name and web address, and an access token for it, stored encrypted (AES-256-GCM). This lets our service send your notifications while the app is closed.</li>
+  <li><strong>Your settings for each home.</strong> Your notification rules and alert choices, whether a home is muted, the names and order you give your homes, which person in the home is you, and whether you share your whereabouts with your household (see "Your location").</li>
+  <li><strong>Your phones.</strong> A push-notification token for each device you sign in on, and the count shown on the app icon.</li>
+  <li><strong>Your home's latest device states.</strong> The most recent state of each device (for example "on" or "locked"), so a notification can say what changed. People's and phones' locations are removed before this is stored.</li>
+  <li><strong>Invitations.</strong> The name (and email, if you add one) of someone you invite, and the sign-in our service uses on their behalf for your home, stored encrypted. When they join, which Pulse account accepted it.</li>
+  <li><strong>Your plan.</strong> Which plan you're on and when it started.</li>
+  <li><strong>AI Suggestions</strong>, if on for a home: the suggestions we generated for it (see below).</li>
+  <li><strong>Business enquiries.</strong> If you ask about Pulse for business: your company, name and contact details.</li>
+</ul>
+
+<h2>What stays on your phone or in your home</h2>
+<ul>
+  <li><strong>Your location.</strong> If you turn on Share My Location, your phone sends its location <strong>directly to your Home Assistant</strong>, not through our service, and we don't store it. Your household sees where you are in Pulse only if you turn on <em>Share with Family</em> (off by default); otherwise they see "Not sharing". Home Assistant itself keeps your location, and its administrators can see it there.</li>
+  <li><strong>Voice commands</strong> are turned into text on your phone and sent to your Home Assistant.</li>
+  <li><strong>Camera video</strong> comes from your Home Assistant to your phone. It doesn't pass through or get stored by our service.</li>
+  <li><strong>Face ID</strong> is handled by your iPhone. Pulse only learns whether unlocking succeeded.</li>
+  <li><strong>Your dashboard layout, favourites and household permissions</strong> are stored in your Home Assistant.</li>
+</ul>
+
+<h2>AI Suggestions</h2>
+<p>If AI Suggestions is on for a home, our service sends a summary of how the home's devices are used (device names, rooms, and when they turn on and off over recent weeks) to Anthropic's Claude to suggest automations. It doesn't include your location, account details or camera images. An administrator can turn AI Suggestions off for a home at any time, and the suggestions we stored for it are deleted.</p>
+
+<h2>Who we share it with</h2>
+<p>Only the companies that run parts of Pulse for us, and only what each needs:</p>
+<ul>
+  <li><strong>Clerk</strong>: sign-in and accounts.</li>
+  <li><strong>Fly.io</strong>: hosts our service and its database, in the United States.</li>
+  <li><strong>Apple</strong>: delivers push notifications; Apple Maps estimates drive times.</li>
+  <li><strong>Anthropic</strong>: AI Suggestions, as above.</li>
+  <li><strong>Resend</strong>: emails a business enquiry to our team.</li>
+  <li><strong>Google Maps</strong>: only if you choose to get directions, in Google's app.</li>
+</ul>
+<p>We don't sell your information, show ads, or use advertising or analytics trackers.</p>
+
+<h2>How long we keep it, and deleting it</h2>
+<p>We keep your information while you have a Pulse account. You can delete your account at any time in the app: <strong>Settings › Pulse Account › Delete Pulse Account</strong>. That deletes your account and everything above that belongs to it. A home you connected that others still use keeps working for them, using the connection you set up, until an administrator replaces it; a home nobody else uses is deleted too. Your Home Assistant accounts and everything stored in your homes are not affected. Business enquiries are kept until they're handled, or until you ask us to delete them.</p>
+
+<h2>Security</h2>
+<p>Everything travels over encrypted connections, and the access tokens and sign-ins we hold for your homes are encrypted when stored. Pulse's household permissions decide what Pulse shows each person; they don't change what that person's Home Assistant account can do.</p>
+
+<h2>Children</h2>
+<p>Pulse isn't intended for children under 16, and we don't knowingly collect their information.</p>
+
+<h2>Your rights</h2>
+<p>You can ask us for a copy of your information, or to correct or delete it, by writing to <a href="mailto:info@pulse-io.com">info@pulse-io.com</a>. Depending on where you live, you may have further rights under local law, and the right to complain to your data-protection authority.</p>
+
+<h2>Changes</h2>
+<p>If we change this policy, we'll update the date above, and tell you in the app if the change is significant.</p>
+
+<footer>Pulse · <a href="/terms/">Terms of Use</a></footer>
+</main>
+</body>
+</html>
