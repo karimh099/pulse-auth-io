@@ -25,7 +25,7 @@
 <main>
 <div class="brand"><span></span>Pulse</div>
 <h1>Privacy Policy</h1>
-<div class="meta">Effective 2 October 2026</div>
+<div class="meta">Effective 3 October 2026</div>
 
 <p>Pulse is an app for controlling your own smart home. It connects to <strong>your</strong> Home Assistant server, and your home's devices, history and settings live there, not with us. This policy explains the small amount of information Pulse's own service keeps, why, and what you can do about it.</p>
 <p>Pulse is provided by Karim Hallab ("we"). Questions: <a href="mailto:info@pulse-io.com">info@pulse-io.com</a>.</p>
@@ -33,7 +33,7 @@
 <h2>What we keep</h2>
 <ul>
   <li><strong>Your Pulse account.</strong> Your email address and name, held by our sign-in provider, Clerk. We never see your password.</li>
-  <li><strong>The homes you connect.</strong> Each home's name and web address, and an access token for it, stored encrypted (AES-256-GCM). This lets our service send your notifications while the app is closed.</li>
+  <li><strong>The homes you connect.</strong> Each home's name and web address, and an access token for it, stored encrypted (AES-256-GCM). This lets our service send your notifications while the app is closed. The token carries the rights of the Home Assistant account that connected the home, so it could be used to see and control everything that account can. We use it only to read your devices' states for notifications and AI Suggestions, never to change anything in your home. It appears as "Pulse Push" in your Home Assistant profile (Security), where you can revoke it at any time; notifications stop until the home is connected again.</li>
   <li><strong>Your settings for each home.</strong> Your notification rules and alert choices, whether a home is muted, the names and order you give your homes, which person in the home is you, and whether you share your whereabouts with your household (see "Your location").</li>
   <li><strong>Your phones.</strong> A push-notification token for each device you sign in on, and the count shown on the app icon.</li>
   <li><strong>Your home's latest device states.</strong> The most recent state of each device (for example "on" or "locked"), so a notification can say what changed. People's and phones' locations are removed before this is stored.</li>
@@ -48,12 +48,13 @@
   <li><strong>Your location.</strong> If you turn on Share My Location, your phone sends its location <strong>directly to your Home Assistant</strong>, not through our service, and we don't store it. Your household sees where you are in Pulse only if you turn on <em>Share with Family</em> (off by default); otherwise they see "Not sharing". Home Assistant itself keeps your location, and its administrators can see it there.</li>
   <li><strong>Voice commands</strong> are turned into text on your phone and sent to your Home Assistant.</li>
   <li><strong>Camera video</strong> comes from your Home Assistant to your phone. It doesn't pass through or get stored by our service.</li>
+  <li><strong>Your Home Assistant password.</strong> You sign in on Home Assistant's own page; Pulse never sees or stores your password. The sign-in Home Assistant gives back is kept in your phone's keychain, and the app then talks to your server directly.</li>
   <li><strong>Face ID</strong> is handled by your iPhone. Pulse only learns whether unlocking succeeded.</li>
   <li><strong>Your dashboard layout, favourites and household permissions</strong> are stored in your Home Assistant.</li>
 </ul>
 
 <h2>AI Suggestions</h2>
-<p>If AI Suggestions is on for a home, our service sends a summary of how the home's devices are used (device names, rooms, and when they turn on and off over recent weeks) to Anthropic's Claude to suggest automations. It doesn't include your location, account details or camera images. An administrator can turn AI Suggestions off for a home at any time, and the suggestions we stored for it are deleted.</p>
+<p>AI Suggestions is on by default. While it is on for a home, our service sends a summary of how the home's devices are used (device names, rooms, and when they turn on and off over recent weeks) and of the automations the home already has to Anthropic's Claude to suggest automations. It doesn't include your location, account details or camera images. An administrator can turn AI Suggestions off for a home at any time, and the suggestions we stored for it are deleted.</p>
 
 <h2>Who we share it with</h2>
 <p>Only the companies that run parts of Pulse for us, and only what each needs:</p>
