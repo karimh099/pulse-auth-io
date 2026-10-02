@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["VLM3U77AA7.com.karimhallab.pulse"],
+        "components": [
+          { "/": "/invite", "comment": "An invitation link opens Pulse's join screen" },
+          { "/": "/invite/*", "comment": "...with its code in ?c=" }
+        ]
+      }
+    ]
+  }
+}
