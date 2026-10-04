@@ -25,7 +25,7 @@
 <main>
 <div class="brand"><span></span>Pulse</div>
 <h1>Privacy Policy</h1>
-<div class="meta">Effective 3 October 2026</div>
+<div class="meta">Effective 4 October 2026</div>
 
 <p>Pulse is an app for controlling your own smart home. It connects to <strong>your</strong> Home Assistant server, and your home's devices, history and settings live there, not with us. This policy explains the small amount of information Pulse's own service keeps, why, and what you can do about it.</p>
 <p>Pulse is provided by Karim Hallab ("we"). Questions: <a href="mailto:info@pulse-io.com">info@pulse-io.com</a>.</p>
@@ -46,7 +46,7 @@
 <h2>What stays on your phone or in your home</h2>
 <ul>
   <li><strong>Your location.</strong> If you turn on Share My Location, your phone sends its location <strong>directly to your Home Assistant</strong>, not through our service, and we don't store it. Your household sees where you are in Pulse only if you turn on <em>Share with Family</em> (off by default); otherwise they see "Not sharing". Home Assistant itself keeps your location, and its administrators can see it there.</li>
-  <li><strong>Voice commands</strong> are turned into text on your phone and sent to your Home Assistant.</li>
+  <li><strong>Voice commands</strong> are turned into text on your phone and sent to your Home Assistant, which works out what you meant; Pulse then does only what you're allowed to do. With Smart Voice on, a sentence your Home Assistant doesn't understand is sent to our service and on to Anthropic's Claude (see below).</li>
   <li><strong>Camera video</strong> comes from your Home Assistant to your phone. It doesn't pass through or get stored by our service.</li>
   <li><strong>Your Home Assistant password.</strong> You sign in on Home Assistant's own page; Pulse never sees or stores your password. The sign-in Home Assistant gives back is kept in your phone's keychain, and the app then talks to your server directly.</li>
   <li><strong>Face ID</strong> is handled by your iPhone. Pulse only learns whether unlocking succeeded.</li>
@@ -55,6 +55,10 @@
 
 <h2>AI Suggestions</h2>
 <p>AI Suggestions is on by default. While it is on for a home, our service sends a summary of how the home's devices are used (device names, rooms, and when they turn on and off over recent weeks) and of the automations the home already has to Anthropic's Claude to suggest automations. It doesn't include your location, account details or camera images. An administrator can turn AI Suggestions off for a home at any time, and the suggestions we stored for it are deleted.</p>
+<p><strong>Describe Your Own</strong>, part of AI Suggestions: when an administrator types what they'd like (an automation, a scene, an alert, or a change such as renaming a room), that sentence and the same summary of the home go to Claude to prepare it. Nothing changes in the home until they review it and confirm. We don't keep the sentence.</p>
+
+<h2>Smart Voice</h2>
+<p>Smart Voice is off until you turn it on, on each device. When your Home Assistant doesn't understand a voice command, Pulse sends the sentence, with the names, rooms, kinds and current states of the accessories you're allowed to use, to our service and on to Anthropic's Claude, which suggests what to do. Pulse checks every suggested action against what you may use before doing it, and never unlocks, opens a door or gate, or disarms an alarm without your tap. We don't store the sentence or the reply.</p>
 
 <h2>Who we share it with</h2>
 <p>Only the companies that run parts of Pulse for us, and only what each needs:</p>
@@ -62,7 +66,7 @@
   <li><strong>Clerk</strong>: sign-in and accounts.</li>
   <li><strong>Fly.io</strong>: hosts our service and its database, in the United States.</li>
   <li><strong>Apple</strong>: delivers push notifications; Apple Maps estimates drive times.</li>
-  <li><strong>Anthropic</strong>: AI Suggestions, as above.</li>
+  <li><strong>Anthropic</strong>: AI Suggestions, Describe Your Own and Smart Voice, as above.</li>
   <li><strong>Resend</strong>: emails a business enquiry to our team.</li>
   <li><strong>Google Maps</strong>: only if you choose to get directions, in Google's app.</li>
 </ul>
