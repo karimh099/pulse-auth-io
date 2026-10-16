@@ -9,5 +9,8 @@
         ]
       }
     ]
+  },
+  "webcredentials": {
+    "apps": ["VLM3U77AA7.com.karimhallab.pulse"]
   }
 }
